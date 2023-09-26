@@ -66,9 +66,9 @@ void	ft_prnt_lst(t_stack *stack, int amount)
 	ft_printf("\n");
 	while (++i < amount)
 		ft_printf("pos [%d] : content [%d] : index [%d] : active [%d]\n",
-			stack[i].pos,
-			stack[i].content,
-			stack[i].index,
-			stack[i].active);
+					stack[i].pos,
+					stack[i].content,
+					stack[i].index,
+					stack[i].active);
 	ft_printf("\n");
 }

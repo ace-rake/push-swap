@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:13:47 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/06/12 13:17:52 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/09/26 09:50:17 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	is_in_upper(t_stack stack_a[])
 			return (1);
 	return (0);
 }
+
 int	is_in_lower(t_stack stack_a[])
 {
 	int	i;
@@ -50,6 +51,7 @@ int	is_in_lower(t_stack stack_a[])
 			return (1);
 	return (0);
 }
+
 int	is_unsorted(t_stack stack[])
 {
 	if (is_in_lower(stack))

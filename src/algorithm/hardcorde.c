@@ -6,7 +6,7 @@
 /*   By: vdenisse <vdenisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:12:26 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/07/06 14:03:36 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/09/26 10:38:00 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	hardcode_5(t_stack *stack_a[], t_stack *stack_b[], t_list *actions[])
 	size = last_active(*stack_a)->pos;
 	hardcode_3(stack_a, actions);
 	while ((*stack_b)[0].active != 0)
+	{
 		if ((*stack_a)[0].index - 1 == (*stack_b)[0].index
 			|| (*stack_a)[size].index + 1 == (*stack_b)[0].index)
 		{
@@ -90,6 +91,7 @@ void	hardcode_5(t_stack *stack_a[], t_stack *stack_b[], t_list *actions[])
 		}
 		else
 			exec(RA, actions, stack_a, stack_b);
+	}
 	if ((*stack_a)[0].index >= 3)
 		while ((*stack_a)->index != 0)
 			exec(RA, actions, stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 15:06:29 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/06/22 12:02:40 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/09/26 09:51:04 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	forward_swap(t_stack *stack[], t_list *actions[], int lowest)
 		exec_empty(R, actions, stack);
 	}
 }
-
+/*
 void	rotate_swap_start(t_stack *stack[], t_list *actions[])
 {
 	int	lowest;
@@ -64,6 +64,8 @@ void	rotate_swap_start(t_stack *stack[], t_list *actions[])
 		exec_empty(R, actions, stack);
 	}
 }
+*/
+
 void	rotate_swap_start_v2(t_stack *stack[], t_list *actions[])
 {
 	int	lowest;
