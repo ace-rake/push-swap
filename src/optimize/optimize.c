@@ -6,25 +6,11 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:50:08 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/07/06 13:56:54 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:33:24 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-
-static void	remove_next_2(t_list **pre)
-{
-	t_list	*to_del;
-	t_list	*two_del;
-	t_list	*tmp;
-
-	tmp = *pre;
-	to_del = tmp->next;
-	two_del = tmp->next->next;
-	tmp->next = two_del->next;
-	free(two_del);
-	free(to_del);
-}
 
 int	a_check_r_rr_to_0(t_list **actions)
 {

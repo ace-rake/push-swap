@@ -6,7 +6,7 @@
 /*   By: vdenisse <vdenisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:12:26 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/09/26 10:38:00 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:36:38 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,41 +63,6 @@ void	hardcode_4(t_stack *stack_a[], t_stack *stack_b[], t_list *actions[])
 		exec(RA, actions, stack_a, stack_b);
 		exec(RA, actions, stack_a, stack_b);
 	}
-}
-
-void	hardcode_5(t_stack *stack_a[], t_stack *stack_b[], t_list *actions[])
-{
-	int	size;
-
-	exec(PB, actions, stack_a, stack_b);
-	exec(PB, actions, stack_a, stack_b);
-	size = last_active(*stack_a)->pos;
-	hardcode_3(stack_a, actions);
-	while ((*stack_b)[0].active != 0)
-	{
-		if ((*stack_a)[0].index - 1 == (*stack_b)[0].index
-			|| (*stack_a)[size].index + 1 == (*stack_b)[0].index)
-		{
-			exec(PA, actions, stack_a, stack_b);
-			size++;
-		}
-		else if (((*stack_a)[0].index - 1 == (*stack_b)[1].index
-					|| (*stack_a)[size].index + 1 == (*stack_b)[1].index)
-				&& (*stack_b)[1].active == 1)
-		{
-			exec(RB, actions, stack_a, stack_b);
-			exec(PA, actions, stack_a, stack_b);
-			size++;
-		}
-		else
-			exec(RA, actions, stack_a, stack_b);
-	}
-	if ((*stack_a)[0].index >= 3)
-		while ((*stack_a)->index != 0)
-			exec(RA, actions, stack_a, stack_b);
-	else
-		while ((*stack_a)->index != 0)
-			exec(RRA, actions, stack_a, stack_b);
 }
 
 void	hardcode(t_stack *stack_a[], t_stack *stack_b[], t_list *actions[])

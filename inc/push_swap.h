@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:34:05 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/07/06 12:04:16 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:36:38 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ int is_done(t_stack *stack_a[]);
 
 void	optimize(t_list **actions);
 void	optimize_5(t_list *actions[]);
-
+void	remove_next_2(t_list **pre);
+void	hardcode_5(t_stack *stack_a[], t_stack *stack_b[], t_list *actions[]);
+void	hardcode_3(t_stack *stack_a[], t_list *actions[]);
 #endif

@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:38:56 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/07/06 13:54:14 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:31:41 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ void	ft_prnt_lst(t_stack *stack, int amount)
 	ft_printf("\n");
 	while (++i < amount)
 		ft_printf("pos [%d] : content [%d] : index [%d] : active [%d]\n",
-					stack[i].pos,
-					stack[i].content,
-					stack[i].index,
-					stack[i].active);
+			stack[i].pos,
+			stack[i].content,
+			stack[i].index,
+			stack[i].active);
 	ft_printf("\n");
 }
