@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 14:41:48 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:45:52 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/04/05 09:58:16 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/05/30 13:47:17 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
-void	ft_lstdelone(t_list *lst)
+void	ft_putstr_fd(char *s, int fd)
 {
-	free (lst);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		++i;
+	}
 }

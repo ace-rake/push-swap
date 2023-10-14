@@ -4,12 +4,15 @@ CFLAGS = -Wall -Wextra -Werror -g
 NAME = push_swap
 LIBFT_SRCS = $(wildcard src/libft/*.c)
 PRINTF_SRCS = $(wildcard src/printf2/src/*.c)
+GNL_SRCS = $(wildcard src_bonus/gnl/*.c)
 BASIC_SRCS = $(wildcard src/basic/*.c)
 T_STACK_SRCS = $(wildcard src/t_stack/*.c)
 LST_SRCS = $(wildcard src/lst/*.c)
 ALGO_SRCS = $(wildcard src/algorithm/*.c)
 OPT_SRCS = $(wildcard src/optimize/*.c)
 ERR_SRCS = $(wildcard src/error_checking/*.c)
+BONUS_SRCS = $(wildcard src_bonus/*.c)
+
 
 OBJDIR = obj
 OBJLIBFT = $(LIBFT_SRCS:%.c=$(OBJDIR)/%.o)
@@ -20,6 +23,8 @@ OBJLST = $(LST_SRCS:%.c=$(OBJDIR)/%.o)
 OBJALGO = $(ALGO_SRCS:%.c=$(OBJDIR)/%.o)
 OBJOPT = $(OPT_SRCS:%.c=$(OBJDIR)/%.o)
 OBJERR = $(ERR_SRCS:%.c=$(OBJDIR)/%.o)
+OBJBONUS = $(BONUS_SRCS:%.c=$(OBJDIR)/%.o)
+OBJGNL = $(GNL_SRCS:%.c=$(OBJDIR)/%.o)
 
 
 NEC_OBJS = $(OBJLIBFT) $(OBJPRINTF) $(OBJBASIC) $(OBJTSTACK) $(OBJLST) $(OBJALGO) $(OBJOPT) $(OBJERR)
@@ -28,6 +33,9 @@ all: $(NAME)
 
 $(NAME): $(NEC_OBJS) main.o
 	$(CC) $(CFLAGS) $(NEC_OBJS) main.o -o $(NAME)
+
+bonus: $(NEC_OBJS) $(OBJBONUS) $(OBJGNL)
+	$(CC) $(CFLAGS) $(NEC_OBJS) $(OBJBONUS) $(OBJGNL) -o checker
 
 bat: $(NEC_OBJS) basic_test_main.o
 	$(CC) $(CFLAGS) $(NEC_OBJS) basic_test_main.o -o basic_test

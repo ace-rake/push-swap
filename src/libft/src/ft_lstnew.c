@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 14:41:48 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:45:52 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/05/04 11:11:49 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/05/30 13:47:01 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
-void	ft_lstdelone(t_list *lst)
+t_list	*ft_lstnew(void *content)
 {
-	free (lst);
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (new_node = NULL);
+	new_node->next = NULL;
+	new_node->content = content;
+	return (new_node);
 }

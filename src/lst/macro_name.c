@@ -6,13 +6,13 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:03:59 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/06/29 13:09:30 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:38:49 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static const char	*get_macro_name(int value)
+const char	*get_macro_name(int value)
 {
 	if (value == EMPTY)
 		return ("");
@@ -36,8 +36,9 @@ static const char	*get_macro_name(int value)
 		return ("sa");
 	else if (value == SB)
 		return ("sb");
-	else
+	else if (value == SS)
 		return ("ss");
+	return (NULL);
 }
 
 void	print_instructions(t_list *actions)

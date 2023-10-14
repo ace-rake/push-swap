@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 14:41:48 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:45:52 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/04/03 14:19:03 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/05/30 13:47:33 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../header/libft.h"
 
-#include "libft.h"
-
-void	ft_lstdelone(t_list *lst)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	free (lst);
+	if (n == 0)
+		return (0);
+	while (*s1 == *s2 && *s1 != '\0' && *s2 != '\0' && --n)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

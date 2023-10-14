@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:34:05 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/09 13:36:38 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:38:49 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../src/libft/libft.h"
 # include "../src/printf2/inc/ft_printf.h"
 # include <stdlib.h>
+# include "../src_bonus/gnl/get_next_line.h"
 
 typedef struct s_stack
 {
@@ -61,6 +62,7 @@ void	exec_b_only(int action, t_list *actions[], t_stack *stack_b[]);
 void	exec_empty(int action, t_list *actions[], t_stack *stack[]);
 
 void	print_instructions(t_list *actions);
+const char	*get_macro_name(int value);
 
 int		rotate(t_stack *stack[]);
 int		rrotate(t_stack *stack[]);

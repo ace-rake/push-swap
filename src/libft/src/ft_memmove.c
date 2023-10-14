@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 14:41:48 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:45:52 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/04/03 12:34:29 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/05/30 13:47:09 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../header/libft.h"
 
-#include "libft.h"
-
-void	ft_lstdelone(t_list *lst)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	free (lst);
+	char	*p;
+	char	*q;
+
+	p = (char *)dst;
+	q = (char *)src;
+	if (dst == src)
+		return (dst);
+	if (q < p)
+	{
+		while (len--)
+			*(p + len) = *(q + len);
+		return (dst);
+	}
+	while (len--)
+		*p++ = *q++;
+	return (dst);
 }

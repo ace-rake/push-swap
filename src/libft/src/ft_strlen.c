@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 14:41:48 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:45:52 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/04/03 11:48:34 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/05/30 13:47:30 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../header/libft.h"
 
-#include "libft.h"
-
-void	ft_lstdelone(t_list *lst)
+size_t	ft_strlen(const char *s)
 {
-	free (lst);
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 11:11:49 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:47:12 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/04/04 12:19:31 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/05/30 13:47:25 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../header/libft.h"
 
-#include "libft.h"
-
-t_list	*ft_lstnew(int content)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_list	*new_node;
+	char	*result;
+	int		i;
+	int		j;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (new_node = NULL);
-	new_node->next = NULL;
-	new_node->content = content;
-	return (new_node);
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	result = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!result)
+		return (NULL);
+	while (s1[i])
+	{
+		result[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		result[i] = s2[j];
+		i++;
+		j++;
+	}
+	result[i] = '\0';
+	return (result);
 }

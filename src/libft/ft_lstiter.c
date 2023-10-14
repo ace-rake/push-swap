@@ -6,13 +6,13 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:38:33 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/06/01 12:16:46 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:46:51 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_lstiter(t_list *lst, void (*f)(int))
+/*
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst)
 		return ;
@@ -22,3 +22,4 @@ void	ft_lstiter(t_list *lst, void (*f)(int))
 		lst = lst->next;
 	}
 }
+*/

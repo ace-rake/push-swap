@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_done.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/07 14:06:17 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:59:31 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/04/03 13:26:46 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/05/30 13:47:27 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../header/libft.h"
 
-#include "../../inc/push_swap.h"
-
-int	is_done(t_stack *stack_a[])
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		amount;
-	int		i;
-	t_stack	*tmp;
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
 
-	amount = last_active(*stack_a)->pos;
-	tmp = *stack_a;
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (!dst && size == 0)
+		return (src_len);
+	if (size <= dst_len)
+		return (size + src_len);
 	i = 0;
-	if (amount == 1)
+	while (src[i] && i < size - dst_len - 1)
 	{
-		if (tmp[0].index  > tmp[1].index)
-			return (0);
-		else
-			return (1);
-	}
-	while (i < amount)
-	{
-		if (tmp[i].index > tmp[i + 1].index)
-			if (tmp[i].index != amount || tmp[i + 1].index != 0)
-				return (0);
+		dst[dst_len + i] = src[i];
 		i++;
 	}
-	return (1);
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }

@@ -6,13 +6,14 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:41:48 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/14 11:45:52 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/05/30 13:46:55 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
-void	ft_lstdelone(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	(*del)(lst->content);
 	free (lst);
 }
