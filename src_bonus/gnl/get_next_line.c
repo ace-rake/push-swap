@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:56:59 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/08/09 11:57:54 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:10:19 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -131,6 +131,5 @@ char	*get_next_line(int fd, int free_saved)
 	ft_extract_line(&next_line, &saved, saved_size, bytes_read);
 	if (free_saved)
 		free(saved);
-	(void)free_saved;
 	return (next_line);
 }
