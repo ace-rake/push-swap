@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:38:56 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/09 13:31:41 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:27:33 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ t_stack	*ft_init(int amount, char *argv[])
 		i++;
 	}
 	indexer(&stack, amount);
+	if (is_done(&stack) && stack[0].index == 0)
+	{
+		free(stack);
+		return (0);
+	}
 	return (stack);
 }
 

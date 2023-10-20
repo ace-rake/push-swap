@@ -6,7 +6,7 @@
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 09:11:07 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/07/06 14:17:28 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:18:43 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	error_check_2(int amount, t_stack stack[])
 	while (i <= amount)
 	{
 		j = i + 1;
-		while (j <= amount)
+		while (j < amount)
 			if (stack[i].content == stack[j++].content)
 				return (1);
 		i++;

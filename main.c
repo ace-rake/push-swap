@@ -6,7 +6,7 @@
 /*   By: vdenisse <vdenisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:00:15 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/07/06 12:04:55 by vdenisse         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:27:33 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int argc, char *argv[])
 
 	amount = argc - 1;
 	stack_a = ft_init(amount, argv);
+	if (!stack_a)
+		return (0);
 	if (error_check(amount, stack_a, argv))
 		return (1);
 	stack_b = ft_init_empty(amount);

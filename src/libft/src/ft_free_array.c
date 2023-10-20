@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   master.c                                           :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdenisse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/07 13:30:38 by vdenisse          #+#    #+#             */
-/*   Updated: 2023/10/20 15:18:43 by vdenisse         ###   ########.fr       */
+/*   Created: 2023/10/18 13:18:18 by vdenisse          #+#    #+#             */
+/*   Updated: 2023/10/18 13:27:17 by vdenisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../header/libft.h"
 
-int	master(t_stack *stack_a[], t_stack *stack_b[], t_list *actions[])
+void	ft_free_char_array(char **array)
 {
-	if (is_done(stack_a) && stack_a[0]->index == 0)
-		return (0);
-	rotate_push_start(stack_a, stack_b, actions);
-	return (0);
+	int	i;
+
+	if (!array)
+		return ;
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
